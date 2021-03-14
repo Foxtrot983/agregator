@@ -1,0 +1,26 @@
+{% extends 'agreg_app/layout.html' %}
+
+{% block title %}Check Values{% endblock %}
+
+{% block body %}
+    <table>
+        {{ value.time }}
+        {% for value in values %}
+            <tr>
+                <td>{{ value.time }}</td>
+                <td>{{ value.name }}</td>
+                <td>{{ value.value_buy }}</td>
+                <td>{{ value.value_sell }}</td>
+                <td>{{ value.value_nb }}</td>
+                <td></td>
+            </tr>
+
+
+        {% endfor %}
+    </table>
+    <h4>Выбрать дату:</h4>
+    <form>
+        <input type="date" name="calendar">
+        <a><input type="submit" value="Найти"></a>
+    </form>
+{% endblock %}
